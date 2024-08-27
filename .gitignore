@@ -1,0 +1,6 @@
+# local and global env files
+.env
+
+# bin and temp
+bin
+temp

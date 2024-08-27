@@ -1,5 +1,5 @@
 # local and global env files
-.env
+/.env
 
 # bin and temp
 bin

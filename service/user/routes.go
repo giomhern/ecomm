@@ -3,6 +3,8 @@ package user
 import (
 	"net/http"
 
+	"github.com/giomhern/ecomm/types"
+	"github.com/giomhern/ecomm/utils"
 	"github.com/gorilla/mux"
 )
 
@@ -19,6 +21,14 @@ func (h *Handler) RegisterRoutes(router *mux.Router) {
 }
 
 func (h *Handler) handleRegister(w http.ResponseWriter, r *http.Request) {
+	// accept JSON paywall --> check if user exists (if not we create user)
+
+	var payload types.RegisterUserPayload
+	if err := utils.ParseJSON(r, payload); err != nil {
+		utils.WriteError(w, http.StatusBadRequest, err)
+	}
+
+	
 
 }
 
